@@ -42,12 +42,6 @@ async def channelcreated(inter, channel: disnake.abc.GuildChannel):
     await inter.send(f'time created <t:{createdat}:R> that is <t:{createdat}:D>')
 
 
-@ibot.slash_command(description='message created?')
-async def messagecreated(inter, mgs: disnake.Message):
-    createdat = floor(mgs.created_at.timestamp())
-    await inter.send(f'time created <t:{createdat}:R> that is <t:{createdat}:D>')
-
-
 @ibot.message_command(name='created?')
 async def messagec(inter, mgs: disnake.Message):
     createdat = floor(mgs.created_at.timestamp())
